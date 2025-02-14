@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz San Valentín</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8d7da;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #FF1493; /* Cambié el color del título a un rosa fuerte */
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            background-color: #8b4545;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(222, 222, 222);
+            transform-style: preserve-3d;
+            transform-origin: 50% 0%;
+            transition: transform 1s;
+        }
+
+        .card.open {
+            transform: rotateY(180deg);
+        }
+
+        .card-inner {
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .card-front, .card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-front {
+            background-image: url('masca.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat; /* Eliminé el error */
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        /* Fondo de la carta con la imagen corablack.jpg */
+        .card-back {
+            background-image: url('corablack.jpg'); /* Usamos la imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat; /* Para evitar la repetición */
+            transform: rotateY(180deg);
+            color: #ffffff; /* Cambié el color del texto a negro */
+            padding: 25px;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .heart {
+            font-size: 50px;
+            color: #FF6347; /* Cambié el color del corazón a un rojo tomate */
+        }
+
+        /* Imagen más pequeña en la parte trasera */
+        .image {
+            width: 150px; /* Cambié el tamaño de la imagen */
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #FF6347; /* Cambié el color del botón a un rojo tomate */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #FF4500; /* Color de hover en el botón */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Feliz San Valentín, mi amor!</h1>
+    <div class="card" id="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="heart">❤️</div>
+                <p>.</p>
+            </div>
+            <div class="card-back">
+                <h2>Te amo mucho Mi Princesita❤️‍🔥</h2>
+                <p>Gracias por tanto de tu parte, aunque no sea la mejor persona para ti, siempre apesar de todo intentas apoyarme a tu manera,perdon por como tu dices ser un celoso, po rser una mala persona porque sinceramente yo ni te merezco la verdad, feliz san valentin apesar de todo estas aqui, lamento no poder darte grandes regalos, por no tener dinero, por mas bien pedirte a ti que me apoyes con dinero, cuando se que no deberias hacerlo, espero algun dia poderte cumplir todos tus caprichos.💖</p>
+                <!-- Imagen visible más pequeña en la parte trasera de la carta -->
+                <img src="tye2025.jpg" alt="Foto Especial" class="image">
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <button class="button" onclick="openCard()">Abrir Carta</button>
+
+    <script>
+        function openCard() {
+            const card = document.getElementById('card');
+            card.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
